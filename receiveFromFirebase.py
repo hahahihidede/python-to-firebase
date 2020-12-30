@@ -1,8 +1,13 @@
+#import firebase library
 from firebase import firebase
-import json
+ 
+#declare your database url and make sure to enable write and read setting in your firebase database setting
+firebase = firebase.FirebaseApplication('YOUR DATABASE URL', None)
 
-firebase = firebase.FirebaseApplication('https://dede-8abcf-default-rtdb.firebaseio.com/testData/', None)
-data = firebase.get('/-MPmcn2rs3o2AXTfqlAY/', '')
+#spesific table of your database (e.g '/-MPmcn2rs3o2xxxqlAY/')
+data = firebase.get('SPECIFIED TABLE OF YOUR DATABASE', '')
+
+#column you want to fetch
 for d in data:
     print (d['Nama'])
     print (d['Alamat'])
